@@ -8,7 +8,7 @@ ARG TERM=linux
 ARG DEBIAN_FRONTEND=noninteractive
 
 # Basic security patch 
-RUN apt-get update && apt-get install -yq apt-transport-https && apt-get dist-upgrade --force-yes -fuy -o Dpkg::Options::="--force-confnew --force-confdef"
+RUN apt-get update && apt-get install -yq apt-transport-https && apt-get dist-upgrade --force-yes -fuy -o Dpkg::Options::=" --force-confnew" -o Dpkg::Options::=" --force-confdef"
 
 # Import MongoDB public GPG key AND create a MongoDB list file
 RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
